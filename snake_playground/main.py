@@ -18,7 +18,7 @@ snake_body = []
 number_of_eaten_food = 0
 background.settings(screen, head, food, quote)
 
-while True:  #непосредственный процесс игры
+while True:  # процесс игры
     screen.update()
     if head.distance(food) < 17: # если змейка "поедает" фрукт
         number_of_eaten_food += 1
@@ -38,13 +38,13 @@ while True:  #непосредственный процесс игры
         new_snake_part.penup()
         snake_body.append(new_snake_part)
 
-        for segment in snake_body:
+        for segment in snake_body: # при поедании меняем цвет каждого элемента хвоста
             segment.color(new_color)
-        sleep -= 0.01
-        score += 10
-        if score > high_score:
+        sleep -= 0.01 # немного увеличиваем скорость движения змейки (для интерактивности)
+        score += 10 
+        if score > high_score: 
             high_score = score
-        quote.clear()
+        quote.clear() # *обновляем* заголовок игры
         quote.write("Score : {} High Score : {} ".format(score, high_score), align="center", font=("Courier", 12, "normal"))
 
     if head.xcor() > width / 2 - 15 or head.xcor() < -1 * width / 2 + 15 or head.ycor() > height / 2 - 15 or head.ycor() < -1 * height / 2 + 15:
