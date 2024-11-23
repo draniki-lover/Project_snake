@@ -24,8 +24,7 @@ while True:  #непосредственный процесс игры
         number_of_eaten_food += 1
         new_color = colorsys.hsv_to_rgb(random.random(), 1, 0.5)
         if number_of_eaten_food % 2 == 1:
-            width -= 20
-            # background.frame_change(border, number_of_eaten_food) # сначала уменьшаемся поле справа-слева
+            width -= 20 # сначала уменьшаемся поле справа-слева
         elif number_of_eaten_food % 2 == 0:
             height -= 20 # уменьшается поле сверху-снизу
         foodX = random.randint(-1 * width / 2 + 30, width / 2 - 30)
