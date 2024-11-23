@@ -1,4 +1,2 @@
 import random
-import turtle
-import time
-import matplotlib.colors as mcolors
+import colorsys
