@@ -1,18 +1,17 @@
+"""
+Модуль с функциями, отвечающщими за работу игры (визуальные эелементы и движение змейки)
+"""
 import random
 import colorsys
 
-# from main import width, height
-
-
 def settings(window, he, fruit, phrase):
     """
-    Функция отвечает за внешний вид и начаьные настройки работы игры.
+    Функция отвечает за внешний вид и начальные настройки работы игры.
     """
     window.title("Snake game") #наделяем свойствами окно, в котором будет происходить процесс игры"
     window.bgcolor("black")
     window.setup()
     window.tracer(0)
-
 
     he.shape("circle") #создаем голову змейки
     he.color("white")
@@ -72,23 +71,3 @@ def move(he):
     if he.direction == "right":
         x = he.xcor()
         he.setx(x + 20)
-
-# def frame_change(line, count):
-#     if count % 2 == 1:
-#         line.hideturtle()
-#         line.penup()
-#         line.goto(-1 * width + 10/ 2, height / 2)
-#         line.pendown()
-#         line.goto(width / 2 - 10, height / 2)
-#         line.goto(width / 2 - 10, -1 * height / 2)
-#         line.goto(-1 * width / 2 + 10, -1 * height / 2)
-#         line.goto(-1 * width / 2 + 10, height / 2)
-    # elif count % 2 == 0:
-    #     line.hideturtle()
-    #     line.penup()
-    #     line.goto(-1 * width / 2 + 10, height / 2)
-    #     line.pendown()
-    #     line.goto(width / 2 - 10, height / 2)
-    #     line.goto(width / 2 - 10, -1 * height / 2)
-    #     line.goto(-1 * width / 2 + 10, -1 * height / 2)
-    #     line.goto(-1 * width / 2 + 10, height / 2)
